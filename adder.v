@@ -45,8 +45,11 @@ bit_16 DUT(.x(x),.y(y),.cin(cin),.sum(sum),.cout(cout));
 initial
 begin
 $monitor($time, " x=%h, y=%h, cin=%b, sum=%h, cout=%b", x, y, cin, sum, cout);
+x=16'h0;y=16'h0;cin=0;
 #5 x=16'h34fa;y=16'h5cd0;cin=0;
 #5 x=16'h343b;y=16'h2fd0;cin=1;
+#5 x = 16'hFFFF; y = 16'hFFFF; cin = 0;
+#5 x = 16'h8000; y = 16'h8000; cin = 0;
 #5 x=16'h34dc;y=16'h4dd0;cin=1;
 #5 x=16'h34ed;y=16'h3ad0;cin=0;
 end
